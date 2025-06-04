@@ -1,0 +1,301 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    color: #444;
+    background-color: #f4f7f6; /* Light grayish green */
+    display: flex;
+}
+
+.sidebar {
+    width: 290px; /* Slightly wider */
+    background-color: #283149; /* Darker, muted blue */
+    color: #e0e0e0; /* Lighter text for contrast */
+    padding: 25px 15px;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+    border-right: 1px solid #404B69; /* Subtle border */
+}
+
+.sidebar-header {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #404B69;
+    text-align: center;
+    font-weight: 600;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 8px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #bdc3c7;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+}
+
+.sidebar ul li a:hover, .sidebar ul li a.active {
+    background-color: #DB6B97; /* Muted Pink/Magenta accent */
+    color: #ffffff;
+    padding-left: 20px; /* Indent on hover/active */
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.content {
+    margin-left: 290px; /* Match sidebar width */
+    padding: 25px 35px;
+    width: calc(100% - 290px);
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+.main-header {
+    text-align: left;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 3px solid #DB6B97; /* Accent color */
+}
+
+.main-header h1 {
+    font-size: 2.4em;
+    color: #283149; /* Dark blue */
+    font-weight: 700;
+}
+
+section {
+    margin-bottom: 35px;
+    padding: 25px;
+    background-color: #fff; /* Keep sections white */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07); /* Softer shadow */
+    border-left: 5px solid #DB6B97; /* Accent border */
+}
+
+section:first-of-type { /* For the very first section, like Introduction */
+    border-left: 5px solid #3498db; /* Different accent for the first main section */
+}
+
+
+section h2 { /* For I, II, III etc. */
+    font-size: 2em;
+    color: #283149; /* Dark Blue for main section titles */
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: 600;
+}
+
+section h3 { /* For A, B, C etc. */
+    font-size: 1.6em;
+    color: #DB6B97; /* Accent for subsections */
+    margin-top: 30px;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+section h4 { /* For further subdivisions */
+    font-size: 1.3em;
+    color: #5a6782; /* Muted blue-gray */
+    margin-top: 25px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+p, ul, ol {
+    margin-bottom: 18px;
+    color: #555;
+    font-size: 1em; /* Standardized font size */
+}
+
+ul, ol {
+    padding-left: 30px;
+}
+
+ul li ul, ol li ol {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+strong, b {
+    font-weight: 600; /* Semibold */
+    color: #283149; /* Dark blue for emphasis */
+}
+
+em, i {
+    font-style: italic;
+    color: #db6b97; /* Accent for italics */
+}
+
+a {
+    color: #3498db; /* Standard link blue */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #2980b9; /* Darker blue on hover */
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 25px;
+    border: 1px solid #dce4e8; /* Lighter border */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #e8eff3; /* Softer lines */
+}
+
+thead th {
+    background-color: #404B69; /* Muted blue for table header */
+    color: #ffffff;
+    font-weight: 600; /* Bold headers */
+    font-size: 0.95em;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tbody tr:hover {
+    background-color: #eef3f7; /* Slightly more pronounced hover */
+}
+
+/* Specific styles for source list */
+#sources ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
+#sources ul li {
+    margin-bottom: 12px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    border-left: 3px solid #3498db;
+}
+#sources ul li strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #283149;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) { /* Adjust breakpoint for sidebar behavior */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: 2px solid #404B69;
+    }
+    .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+    .main-header h1 {
+        font-size: 2em;
+    }
+    section h2 {
+        font-size: 1.7em;
+    }
+    section h3 {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        font-size: 15px; /* Slightly smaller base font for small devices */
+    }
+    .content {
+        padding: 15px;
+    }
+    section {
+        padding: 15px;
+    }
+        .main-header h1 {
+        font-size: 1.8em;
+    }
+    section h2 {
+        font-size: 1.5em;
+    }
+    section h3 {
+        font-size: 1.25em;
+    }
+    th, td {
+        padding: 10px 12px;
+    }
+}
+
+
+/* Scrollbar styling (optional, for webkit browsers) */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #a0a0a0;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    background: #536c88;
+}
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #6f8cb0;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin: 30px 0;
+}
